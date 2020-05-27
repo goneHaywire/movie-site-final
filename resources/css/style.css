@@ -1,0 +1,113 @@
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding: 3rem 0;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.card {
+    text-align: left;
+    cursor: pointer;
+}
+
+.card-header {
+    min-height: 73px;
+}
+
+.card-subtitle {
+    min-height: 28px;
+}
+
+.card-text {
+    overflow: hidden;
+    height: 84px;
+}
+
+.card-image {
+    height: 350px;
+    display: block;
+}
+
+.card .card-body:nth-of-type(2) {
+    min-height: 229px;
+}
+
+.card .list-group-item {
+    background: unset;
+    min-height: 67px;
+}
+
+.card .list-group-item:nth-of-type(2) {
+    min-height: 87px;
+}
+
+.text {
+    font-size: 24px;
+    text-align: left;
+    font-weight: 500;
+}
+
+#footer {
+    margin-top: auto;
+    position: relative;
+}
+
+.scroll-top-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.modal {
+    display: initial;
+    background: #282828cc;
+    text-align: left;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: 22% 22% 22% 22%;
+    grid-template-rows: repeat(1fr, 3);
+    grid-gap: 12% 4%;
+    margin-bottom: 3rem;
+}
+
+#movie-form {
+    text-align: left;
+}
+
+.breadcrumb-item {
+    display: inline;
+}
+
+label {
+    font-weight: 600;
+}
+
+.is-invalid .invalid-feedback {
+    display: block;
+}
