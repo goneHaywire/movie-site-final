@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Genre;
 use App\Http\Controllers\Controller;
 use App\Movie;
 use Illuminate\Http\Request;
@@ -41,5 +42,30 @@ class MovieController extends Controller
         $newMovie->genres()->sync(json_decode($request->genres));
 
         return response()->json(['movie' => $newMovie->load('genres')]);
+    }
+
+    public function test(Request $request){
+        $movies = Movie::all();
+        foreach($movies as $movie){
+            $genre_ids = [];
+            $genre0 = $movie->genres0;
+            array_push($genre_ids, Genre::where('name', $genre0)->first()->id);
+//            $movie->genres()->sync(Genre::where('name', $genre0)->pluck('id'));
+
+            if ($movie->genres1){
+                $genre1 = $movie->genres1;
+                array_push($genre_ids, Genre::where('name', $genre1)->first()->id);
+//                $movie->genres()->sync(Genre::where('name', $genre1)->pluck('id'));
+            }
+            if ($movie->genres2){
+                $genre2 = $movie->genres2;
+                array_push($genre_ids, Genre::where('name', $genre2)->first()->id);
+//                $movie->genres()->sync(Genre::where('name', $genre2)->pluck('id'));
+            }
+//            $movie->length = explode(" ", $movie->length1)[0];
+//            dd($genre_ids);
+            $movie->genres()->sync($genre_ids);
+            $movie->save();
+        }
     }
 }

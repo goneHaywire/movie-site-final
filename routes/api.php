@@ -20,5 +20,5 @@ Route::resource('movies', 'Api\MovieController')->only(['index', 'store']);
 //Route::get('genres/{id}/movies', 'Api\GenreController@moviesOfGenre');
 //Route::get('genres/amount', 'Api\GenreController@genresWithAmount');
 
-//Route::get('movies/map', 'Api\MovieController@mapGenres');
+Route::get('movies/map', 'Api\MovieController@test');
 //Route::get('movies/query/{query}', 'Api\MovieController@searchMovies');
